@@ -33,6 +33,21 @@ Keywords:
 	- the _ operator specifies any single character
 - NOT LIKE: select anything that does not match the pattern
 
+### Aggregate Functions
+
+Kewyords:
+- AVG(): Take the average of a column
+- MAX(): Get the max of a column
+- SUM(): Sum the entries in a column
+- MIN(): Get the minimum of a column
+- AS: Use aliasing when generating multiple aggregated results to differentiate
+
+### Sort and Group Results
+
+Keywords:
+- ORDER BY: sorts column in ascending order, use DESC to indicate descending order
+- GROUP BY: group similar entries and aggregate
+- HAVING: filter groups using this keyword
 
 ## Notes on SQL and Relational Databases
 
@@ -89,3 +104,18 @@ Keywords:
 		Where release_year
 		BETWEEN 2000 AND 2010;
 		```
+* Aggregate functions are useful for operating on the data in a SQL database
+	* To use an aggregate function, place the column in parantheses
+		* Example:
+		```
+		SELECT AVG(budget)
+		FROM films;
+		```
+* Example of joining info from two tables
+	```
+	SELECT title, imdb_score
+	FROM films
+	JOIN reviews
+	ON films.id = reviews.film_id
+	WHERE title = 'To Kill a Mockingbird';
+	```
